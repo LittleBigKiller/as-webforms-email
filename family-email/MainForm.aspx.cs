@@ -14,9 +14,23 @@ namespace family_email
 
         }
 
-        protected void bHello_Click(object sender, EventArgs e)
+        protected void bClear_Click(object sender, EventArgs e)
         {
-            lHello.Text = "Hello, " + tbHello.Text;
+            tbFrom.Text = "";
+            tbTo.Text = "";
+            tbSubject.Text = "";
+            tbText.Text = "";
+            tbSMTP.Text = "";
+            lInfo1.Text = "";
+            lbAttachments.Items.Clear();
+        }
+
+        protected void bSave_Click(object sender, EventArgs e)
+        {
+            if (fuAttachments.HasFile)
+            {
+
+            }
         }
     }
 }
