@@ -29,7 +29,11 @@ namespace family_email
         {
             if (fuAttachments.HasFile)
             {
-
+                string fileName = fuAttachments.FileName;
+                string serverPath = Server.MapPath("~/") + fileName;
+                fuAttachments.SaveAs(serverPath);
+                lbAttachments.Items.Add(fileName);
+                lInfo2.Text = "Attachment Downloaded";
             }
         }
     }

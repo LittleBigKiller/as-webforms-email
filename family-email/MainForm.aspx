@@ -18,13 +18,6 @@
         .tb {
             width: 100%;
         }
-        .flex-elem {
-            display: flex;
-            height: 69px;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
     </style>
 </head>
 <body style="height: 371px">
@@ -61,7 +54,7 @@
             <tr>
                 <td>Text</td>
                 <td>
-                    <asp:TextBox ID="tbText" runat="server" class="tb"></asp:TextBox>
+                    <asp:TextBox ID="tbText" runat="server" class="tb" Rows="16" TextMode="MultiLine"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -74,8 +67,9 @@
             </tr>
             <tr>
                 <td class="auto-style2"></td>
-                <td class="auto-style2 flex-elem middle-row">
+                <td class="auto-style2 middle-row" style="height: 69px;">
                     <asp:Button ID="bSend" runat="server" Text="Send" />
+                    <br />
                     <asp:Label ID="lInfo1" runat="server"></asp:Label>
                 </td>
                 <td class="auto-style2"></td>
