@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 100%;
+            width: 640px;
         }
         .middle-row {
             text-align: center;
@@ -17,11 +17,14 @@
         }
         .tb {
             width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body style="height: 371px">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="display: flex; justify-content: center; align-items: center;">
         <table class="auto-style1">
             <tr>
                 <td>&nbsp;</td>
@@ -68,7 +71,7 @@
             <tr>
                 <td class="auto-style2"></td>
                 <td class="auto-style2 middle-row" style="height: 69px;">
-                    <asp:Button ID="bSend" runat="server" Text="Send" />
+                    <asp:Button ID="bSend" runat="server" Text="Send" OnClick="bSend_Click" />
                     <br />
                     <asp:Label ID="lInfo1" runat="server"></asp:Label>
                 </td>
@@ -77,7 +80,9 @@
             <tr>
                 <td>Attachments</td>
                 <td>
-                    <asp:FileUpload ID="fuAttachments" runat="server" class="tb"/>
+                    <div class="tb">
+                        <asp:FileUpload ID="fuAttachments" runat="server"/>
+                    </div>
                 </td>
                 <td>
                     <asp:Button ID="bSave" runat="server" Text="Save" OnClick="bSave_Click" />
@@ -86,7 +91,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td class="middle-row">
-                    <asp:ListBox ID="lbAttachments" runat="server"></asp:ListBox>
+                    <asp:ListBox ID="lbAttachments" runat="server" class="tb"></asp:ListBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>
