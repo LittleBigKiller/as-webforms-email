@@ -67,7 +67,7 @@
                     <asp:TextBox ID="tbSMTP" runat="server" class="tb"></asp:TextBox>
                 </td>
                 <td class="auto-style2">
-                    <asp:RadioButtonList ID="rblLocal" runat="server">
+                    <asp:RadioButtonList ID="rblLocal" runat="server" OnSelectedIndexChanged="rblLocal_SelectedIndexChanged" AutoPostBack="true">
                         <asp:ListItem Selected="True">localhost</asp:ListItem>
                         <asp:ListItem>authenticated</asp:ListItem>
                     </asp:RadioButtonList>

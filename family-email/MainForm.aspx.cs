@@ -15,7 +15,17 @@ namespace family_email
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            tbPort.Text = "";
+            tbPort.Enabled = false;
 
+            tbSMTP.Text = "localhost";
+            tbSMTP.Enabled = false;
+
+            tbUsername.Text = "";
+            tbUsername.Enabled = false;
+
+            tbPassword.Text = "";
+            tbPassword.Enabled = false;
         }
 
         protected void bClear_Click(object sender, EventArgs e)
@@ -27,11 +37,6 @@ namespace family_email
             tbSMTP.Text = "";
             lInfo1.Text = "";
             lbAttachments.Items.Clear();
-
-            if (rblLocal.SelectedIndex == 0)
-            {
-                lInfo1.Text = "Yeet";
-            }
         }
 
         protected void bSave_Click(object sender, EventArgs e)
@@ -58,7 +63,7 @@ namespace family_email
                 message.Subject = tbSubject.Text;
                 message.Body = tbText.Text;
 
-                if (rblLocal.SelectedIndex == 0)
+                if (rblLocal.SelectedIndex == 1)
                 {
                     client = new SmtpClient(tbSMTP.Text, int.Parse(tbPort.Text));
                     client.EnableSsl = true;
@@ -97,6 +102,38 @@ namespace family_email
             catch(Exception ex)
             {
                 lInfo1.Text = "Could not send message (" + ex.Message + ")";
+            }
+        }
+
+        protected void rblLocal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rblLocal.SelectedIndex == 0)
+            {
+                tbPort.Text = "";
+                tbPort.Enabled = false;
+
+                tbSMTP.Text = "localhost";
+                tbSMTP.Enabled = false;
+
+                tbUsername.Text = "";
+                tbUsername.Enabled = false;
+
+                tbPassword.Text = "";
+                tbPassword.Enabled = false;
+            }
+            else
+            {
+                tbPort.Text = "";
+                tbPort.Enabled = true;
+
+                tbSMTP.Text = "";
+                tbSMTP.Enabled = true;
+
+                tbUsername.Text = "";
+                tbUsername.Enabled = true;
+
+                tbPassword.Text = "";
+                tbPassword.Enabled = true;
             }
         }
     }
