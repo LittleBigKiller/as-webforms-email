@@ -72,7 +72,7 @@ namespace family_email
                 }
                 else
                 {
-                    client = new SmtpClient(tbSMTP.Text);
+                    client = new SmtpClient("localhost");
                     client.Credentials = CredentialCache.DefaultNetworkCredentials;
                 }
 
@@ -109,30 +109,22 @@ namespace family_email
         {
             if (rblLocal.SelectedIndex == 0)
             {
-                tbPort.Text = "";
                 tbPort.Enabled = false;
 
-                tbSMTP.Text = "localhost";
                 tbSMTP.Enabled = false;
 
-                tbUsername.Text = "";
                 tbUsername.Enabled = false;
 
-                tbPassword.Text = "";
                 tbPassword.Enabled = false;
             }
             else
             {
-                tbPort.Text = "";
                 tbPort.Enabled = true;
 
-                tbSMTP.Text = "";
                 tbSMTP.Enabled = true;
 
-                tbUsername.Text = "";
                 tbUsername.Enabled = true;
 
-                tbPassword.Text = "";
                 tbPassword.Enabled = true;
             }
         }
