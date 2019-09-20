@@ -66,6 +66,39 @@
                 <td class="auto-style2">
                     <asp:TextBox ID="tbSMTP" runat="server" class="tb"></asp:TextBox>
                 </td>
+                <td class="auto-style2">
+                    <asp:RadioButtonList ID="rblLocal" runat="server">
+                        <asp:ListItem Selected="True">localhost</asp:ListItem>
+                        <asp:ListItem>authenticated</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+            </tr>
+            <tr id="toHide0" runat="server">
+                <td class="auto-style2">
+                    <asp:Label ID="lPort" runat="server" Text="Port"></asp:Label>
+                </td>
+                <td class="auto-style2 middle-row" style="height: 69px;">
+                    <asp:TextBox ID="tbPort" runat="server" class="tb"></asp:TextBox>
+                </td>
+                <td class="auto-style2"></td>
+            </tr>
+            <tr id="toHide1" runat="server">
+                <td class="auto-style2">
+                    <asp:Label ID="lUsername" runat="server" Text="Username"></asp:Label>
+                </td>
+                <td class="auto-style2 middle-row" style="height: 69px;">
+                    <asp:TextBox ID="tbUsername" runat="server" class="tb"></asp:TextBox>
+                </td>
+                <td class="auto-style2"></td>
+            </tr>
+            <tr id="toHide2" runat="server">
+                <td class="auto-style2">
+                    <asp:Label ID="lPassword" runat="server" Text="Password"></asp:Label>
+                </td>
+                <td class="auto-style2 middle-row" style="height: 69px;">
+                    <asp:TextBox ID="tbPassword" runat="server" class="tb"></asp:TextBox>
+                    <br />
+                </td>
                 <td class="auto-style2"></td>
             </tr>
             <tr>

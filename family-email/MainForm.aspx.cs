@@ -27,6 +27,11 @@ namespace family_email
             tbSMTP.Text = "";
             lInfo1.Text = "";
             lbAttachments.Items.Clear();
+
+            if (rblLocal.SelectedIndex == 0)
+            {
+                lInfo1.Text = "Yeet";
+            }
         }
 
         protected void bSave_Click(object sender, EventArgs e)
@@ -52,8 +57,19 @@ namespace family_email
                 message = new MailMessage(tbFrom.Text, tbTo.Text);
                 message.Subject = tbSubject.Text;
                 message.Body = tbText.Text;
-                client = new SmtpClient(tbSMTP.Text);
-                client.Credentials = CredentialCache.DefaultNetworkCredentials;
+
+                if (rblLocal.SelectedIndex == 0)
+                {
+                    client = new SmtpClient(tbSMTP.Text, int.Parse(tbPort.Text));
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(tbUsername.Text, tbPassword.Text);
+                }
+                else
+                {
+                    client = new SmtpClient(tbSMTP.Text);
+                    client.Credentials = CredentialCache.DefaultNetworkCredentials;
+                }
 
                 for (int i = 0; i < lbAttachments.Items.Count; i++)
                 {
